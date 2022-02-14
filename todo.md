@@ -8,4 +8,5 @@
   .
   .
   .
+- Consider adding front-end js regex check for the input fields
 - Add Likes

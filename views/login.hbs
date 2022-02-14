@@ -1,11 +1,23 @@
 <h1>Log in page</h1>
-<form action="/login" method="POST">
-    <label for="username">Username: </label>
-    <input type="text" name="username">
-    <label for="password">Password: </label>
-    <input type="password" name="password">
-    <button type="submit">Log in</button>
-    {{#if message}}
-        <p>{{message}}</p>
-    {{/if}}
+<form action='/login' method='POST'>
+  <label for='username'>Username: </label>
+  <input
+    type='text'
+    name='username'
+    placeholder='Your cool username'
+    pattern='^(?=.{3,14}$)(?![_.-])(?!.*[_.-]{2})[a-zA-Z0-9_-]+([^._-])$'
+    required
+  />
+  <label for='password'>Password: </label>
+  <input
+    type='password'
+    name='password'
+    placeholder='Enter your password'
+    pattern='^((?=\\\\\\\\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$'
+    required
+  />
+  <button type='submit'>Log in</button>
+  {{#if message}}
+    <p>{{message}}</p>
+  {{/if}}
 </form>
