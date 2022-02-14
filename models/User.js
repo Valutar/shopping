@@ -19,7 +19,7 @@ const userSchema = new Schema({
     required: true,
   },
   avatarUrl: String,
-  tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tweet' }],
+  tweets: [{ type: Schema.Types.ObjectId, ref: 'Tweet' }],
 });
 
 const User = model('User', userSchema);

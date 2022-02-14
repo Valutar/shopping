@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const Tweet = mongoose.model(
-  'Tweet',
+const tweetSchema = new Schema(
   {
     content: {
       type: String,
@@ -12,3 +11,7 @@ const Tweet = mongoose.model(
   },
   { timestamps: true }
 );
+
+const Tweet = model('Tweet', tweetSchema);
+
+module.exports = Tweet;
