@@ -13,7 +13,7 @@
     type='password'
     name='password'
     placeholder='min 8 characters'
-    pattern='^((?=\\\\\\\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$'
+    pattern='^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$'
     required
   />
   <label for='email'>E-mail:</label>
@@ -21,7 +21,7 @@
     type='email'
     name='email'
     placeholder='Your email here'
-    pattern='^([\\\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$'
+    pattern='^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$'
     required
   />
   <button type='submit'>Sign Up</button>

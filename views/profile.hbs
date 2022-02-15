@@ -1,7 +1,12 @@
- <h1>This is the Profil Page</h1>
+<h1>This is the Profile Page</h1>
 <h3>Hi {{user.username}}</h3>
-
-<a href="/main">go to main page</a>
-<a href="/private">go to your private session</a>
-
-<a href="/logout">Log out</a>
+<br />
+<h3>Add a tweet:</h3>
+<form action='/profile/new-tweet' method='POST'>
+  <label for='tweet'>What you'd like to share:</label>
+  <br />
+  <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
+  <button type='submit'>Post!</button>
+</form>
+<br />
+<a href='/logout'>Log out</a>
