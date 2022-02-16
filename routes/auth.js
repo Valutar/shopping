@@ -26,8 +26,8 @@ router.post('/signup', (req, res, next) => {
       const hash = bcrypt.hashSync(password, salt);
       User.create({ username, password: hash, email })
         .then(createdUser => {
-          console.log(createdUser);
-          res.redirect('/login');
+          req.session.user = createdUser;
+          res.redirect('/profile');
         })
         .catch(err => next(err));
     }
@@ -35,16 +35,18 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-  console.log('this body', req.body);
   const { username, password } = req.body;
   User.findOne({ username: username }).then(userFromDB => {
-    if (userFromDB === null) {
+    if (!userFromDB) {
       res.render('login', { message: 'Invalid credentials' });
       return;
     }
     if (bcrypt.compareSync(password, userFromDB.password)) {
       req.session.user = userFromDB;
       res.redirect('/profile');
+    } else {
+      res.render('login', { message: 'Invalid credentials' });
+      return;
     }
   });
 });
