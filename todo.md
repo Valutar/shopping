@@ -8,8 +8,9 @@
 - ✅ ~~Add timestamp to tweets (so that you can see when those were written)~~
 - ✅ ~~If user is logged in redirect to profile when opening index~~
 - ✅ ~~When successfully signed up, redirect to profile~~
-- ✅ Fix: Login button not working on signup page
-- Format a timestamp displayed under the tweet
+- ✅ ~~Fix: Login button not working on signup page~~
+- ✅ ~~Format a timestamp displayed under the tweet~~
+- Add ability to edit tweets
 - .
 - .
 - .
