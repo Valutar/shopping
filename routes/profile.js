@@ -59,4 +59,20 @@ router.get('/tweet/del/:id', async (req, res, next) => {
   }
 });
 
+router.get('/tweet/edit/:id', (req, res, next) => {
+  const id = req.params.id;
+  Tweet.findById(id).then(retrievedTweet => {
+    const { content } = retrievedTweet;
+    res.render('tweet-edit', { content, tweetId: id });
+  });
+});
+
+router.post('/tweet/edit/:id', (req, res, next) => {
+  const id = req.params.id;
+  const { tweet } = req.body;
+  Tweet.findByIdAndUpdate(id, { content: tweet }).then(() => {
+    res.redirect('/profile');
+  });
+});
+
 module.exports = router;
