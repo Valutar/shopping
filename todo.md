@@ -7,8 +7,9 @@
 - ✅ ~~Add ability to delete your tweets~~
 - ✅ ~~Add timestamp to tweets (so that you can see when those were written)~~
 - ✅ ~~If user is logged in redirect to profile when opening index~~
+- ✅ ~~When successfully signed up, redirect to profile~~
 - Format a timestamp displayed under the tweet
-- If not logged in - show "log in & register" links
+- ❌ Fix: Login button not working on signup page
 - .
 - .
 - .
