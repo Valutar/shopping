@@ -13,10 +13,6 @@ function loginCheck() {
   };
 }
 
-/* Check if user has tweets
-if yes - display tweets on the profile
-else - display tweets
- */
 router.get('/', loginCheck(), (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
