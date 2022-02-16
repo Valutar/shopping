@@ -10,7 +10,8 @@
 - ✅ ~~When successfully signed up, redirect to profile~~
 - ✅ ~~Fix: Login button not working on signup page~~
 - ✅ ~~Format a timestamp displayed under the tweet~~
-- Add ability to edit tweets
+- ✅ ~~Add ability to edit tweets~~
+- Show time of edit if the tweet was edited
 - .
 - .
 - .
