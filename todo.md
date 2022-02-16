@@ -6,8 +6,8 @@
 - ✅ ~~and to show them on your profile page~~
 - ✅ ~~Add ability to delete your tweets~~
 - ✅ ~~Add timestamp to tweets (so that you can see when those were written)~~
+- ✅ ~~If user is logged in redirect to profile when opening index~~
 - Format a timestamp displayed under the tweet
-- Add a link to the profile if the user is logged in
 - If not logged in - show "log in & register" links
 - .
 - .
