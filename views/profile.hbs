@@ -2,11 +2,24 @@
 <h3>Hi {{user.username}}</h3>
 <br />
 <h3>Add a tweet:</h3>
-<form action='/profile/new-tweet' method='POST'>
+<form action='/profile/tweet/new' method='POST'>
   <label for='tweet'>What you'd like to share:</label>
   <br />
   <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
   <button type='submit'>Post!</button>
 </form>
 <br />
+<div>
+  {{! The user's tweets are displayed here }}
+  {{#each tweets}}
+    <p>{{content}}
+      <br />
+      <small>{{createdAt}}</small>
+      <br />
+      <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
+        tweet</a>
+    </p>
+    <br />
+  {{/each}}
+</div>
 <a href='/logout'>Log out</a>
