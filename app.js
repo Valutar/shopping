@@ -18,6 +18,14 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
 
+// HBS helper func
+hbs.registerHelper('normalDate', function (dateObj) {
+  const normalDate = `${dateObj.getHours()}:${dateObj.getMinutes()} ${dateObj.getDate()}/${
+    dateObj.getMonth() + 1
+  }/${dateObj.getFullYear()}`;
+  return normalDate;
+});
+
 // default value for title local
 const projectName = 'lab-express-basic-auth';
 const capitalized = string =>
@@ -37,7 +45,7 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI,
     }),
-  }),
+  })
 );
 
 // 👇 Start handling routes here

@@ -14,7 +14,7 @@
   {{#each tweets}}
     <p>{{content}}
       <br />
-      <small>{{createdAt}}</small>
+      <small>Posted on: {{normalDate createdAt}}</small>
       <br />
       <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
         tweet</a>
