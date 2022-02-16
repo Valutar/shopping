@@ -51,35 +51,16 @@ router.post('/tweet/new', (req, res, next) => {
 });
 
 // Delete one of your tweets on your profile
-router.get(
-  '/tweet/del/:id',
-  /* async */ (req, res, next) => {
-    const id = req.params.id;
-    const userId = req.session.user._id;
-    // console.log(typeof id); === 'string'
-    User.findById(userId)
-      .then(async retrievedUser => {
-        retrievedUser.tweets.map(tweet => {
-          if (tweet._id === id) {
-            console.log('TRUE');
-          }
-        });
-        // await retrievedUser.tweets.remove(id);
-        await Tweet.findByIdAndDelete(id);
-        res.redirect('/profile');
-      })
-      .catch(err => next(err));
-    /* Tweet.findByIdAndDelete(id)
-    .then(() => {
-      res.redirect('/profile');
-    })
-    .catch(err => next(err)); */
-    /*   const currentUser = await User.findById(userId);
-  await currentUser.populate('tweets');
-  await currentUser.tweets.pull(id);
-  await Tweet.findByIdAndDelete(id);
-  res.redirect('/profile'); */
+router.get('/tweet/del/:id', async (req, res, next) => {
+  const id = req.params.id;
+  const userId = req.session.user._id;
+  try {
+    await Tweet.findByIdAndDelete(id);
+    await User.findByIdAndUpdate(userId, { $pull: { tweets: id } });
+    res.redirect('/profile');
+  } catch (err) {
+    next(err);
   }
-);
+});
 
 module.exports = router;
