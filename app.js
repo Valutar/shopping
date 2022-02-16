@@ -20,7 +20,7 @@ require('./config')(app);
 
 // default value for title local
 const projectName = 'lab-express-basic-auth';
-const capitalized = (string) =>
+const capitalized = string =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
@@ -37,7 +37,7 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI,
     }),
-  })
+  }),
 );
 
 // 👇 Start handling routes here
@@ -46,6 +46,9 @@ app.use('/', index);
 
 const auth = require('./routes/auth');
 app.use('/', auth);
+
+const profile = require('./routes/profile');
+app.use('/profile', profile);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
