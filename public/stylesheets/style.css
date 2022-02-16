@@ -8,11 +8,11 @@ a {
 }
 */
 h1 {
-  color: #FFFFFF;
-} 
+  color: #ffffff;
+}
 
-label{
-  color: #FFFFFF
+label {
+  color: #ffffff;
 }
 
 /* login */
@@ -23,23 +23,23 @@ body {
   background-color: #15202b;
 }
 
-.homepage{
+.homepage {
   display: flex;
 }
 
-.showcase{
+.showcase {
   width: 54%;
   height: 100%;
 }
 
-.left{
+.left {
   float: left;
   width: 100%;
   padding: 70px 30px;
 }
 
-.left i{
-  color:#FFFFFF;
+.left i {
+  color: #ffffff;
 }
 
 .left h1 {
@@ -48,7 +48,7 @@ body {
   font-size: 74px;
   margin-left: 8px;
   word-spacing: 4px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: sans-serif;
   white-space: inherit;
 }
@@ -58,7 +58,7 @@ body {
   align-items: flex-start;
   font-size: 35px;
   word-spacing: 4px;
-  color:#FFFFFF;
+  color: #ffffff;
   font-family: sans-serif;
   white-space: inherit;
   margin-left: 5px;
@@ -68,10 +68,10 @@ body {
   float: none;
   display: inline-block;
   width: 70%;
-  padding: 8%
+  padding: 8%;
 }
 
-.sign a{
+.sign a {
   padding: 13px 100px;
   height: 1.5rem;
   border: 0;
@@ -79,25 +79,25 @@ body {
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
-  color:#FFFFFF;
+  color: #ffffff;
   text-align: center;
   display: black;
   font-family: sans-serif;
 }
 
-.sign a:hover{
-  background-color:#0085b9;
-  transition: 15. ease-in-out;
+.sign a:hover {
+  background-color: #0085b9;
+  transition: 15 ease-in-out;
 }
 
-.login{
+.login {
   float: none;
   display: inline-block;
   width: 70%;
   padding: 8%;
 }
 
-.login a{
+.login a {
   padding: 13px 100px;
   height: 1.3rem;
   border: 0;
@@ -106,34 +106,33 @@ body {
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
-  color:#FFFFFF;
+  color: #ffffff;
   text-align: center;
   display: black;
   font-family: sans-serif;
 }
 
-.login a:hover{
+.login a:hover {
   background-color: #005577;
-  transition: .15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
-
 /* SIGNUP PAGE */
-.signup-form{
+.signup-form {
   width: 300px;
   box-shadow: 0 0 3px 0 #0f0f0f;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 20px;
   margin: 8% auto;
   text-align: center;
 }
 
-.signup-form h1{
+.signup-form h1 {
   color: #00acee;
   margin-bottom: 30px;
 }
 
-.input-box{
+.input-box {
   border-radius: 50px;
   padding: 10px;
   margin: 10px;
@@ -141,7 +140,7 @@ body {
   border: 1px solid #999;
 }
 
-.signup-bottom{
+.signup-bottom {
   color: rgb(83, 80, 80);
   width: 100%;
   padding: 10px;
@@ -151,10 +150,23 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.signup-bottom:hover{
+.signup-bottom:hover,
+.lgn-btn:hover {
   background-color: #00acee;
-  transition: .15s ease-in-out;
-  color: white
+  transition: 0.15s ease-in-out;
+  color: white;
+}
+
+.lgn-btn {
+  color: rgb(83, 80, 80);
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(239 239 239);
+  border-radius: 50px;
 }
