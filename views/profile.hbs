@@ -7,13 +7,22 @@
 <form action='/profile/tweet/new' method='POST'>
   <label for='tweet'>What you'd like to share:</label>
   <br />
-  <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
+  <textarea
+    name='tweet'
+    id='tweet'
+    cols='30'
+    rows='10'
+    maxlength='280'
+    required
+    autofocus
+  ></textarea>
   <button type='submit'>Post!</button>
 </form>
 <br />
-<div>
-  {{! The user's tweets are displayed here }}
-  {{#each tweets}}
+{{! The user's tweets are displayed here }}
+{{#each tweets}}
+  <div>
+    <h4>Posted by: {{author.username}}</h4>
     <p>{{content}}
       <br />
       {{! Checks if tweet was edited and returns latest timestamp }}
@@ -25,6 +34,6 @@
       <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
     </p>
     <br />
-  {{/each}}
-</div>
+  </div>
+{{/each}}
 <a href='/logout'>Log out</a>

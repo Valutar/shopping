@@ -16,8 +16,15 @@ function loginCheck() {
 router.get('/', loginCheck(), (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
-    .populate('tweets')
+    .populate({
+      path: 'tweets',
+      populate: {
+        path: 'author',
+        model: 'User',
+      },
+    })
     .then(retrievedUser => {
+      Tweet.find();
       res.render('profile', {
         user: user,
         title: `${user.username}'s profile`,
@@ -38,10 +45,7 @@ router.post('/tweet/new', (req, res, next) => {
         userId,
         { $push: { tweets: tweetId } },
         { new: true }
-      ).then(updatedUser => {
-        console.log(updatedUser.tweets);
-        res.redirect('/profile');
-      });
+      ).then(() => res.redirect('/profile'));
     })
     .catch(err => next(err));
 });
