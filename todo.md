@@ -13,6 +13,12 @@
 - ✅ ~~Add ability to edit tweets~~
 - ✅ ~~Show time of edit if the tweet was edited~~
 - Add ability to repost a tweet
+  - ✅ ~~Change tweet model: add reference to author~~
+  - Add "Explore" page to view all tweets (added by other authors)
+  - Add "Retweet" button
+  - Display retweets on your profile
+- Edit .hbs files to autofocus corresponding inputs on page load
+- Edit .hbs files' buttons to react on "hotkeys"
 - .
 - .
 - .

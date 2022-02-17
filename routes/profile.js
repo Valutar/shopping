@@ -30,10 +30,10 @@ router.get('/', loginCheck(), (req, res, next) => {
 // Post new tweet from your profile
 router.post('/tweet/new', (req, res, next) => {
   const { tweet } = req.body;
-  Tweet.create({ content: tweet })
+  const userId = req.session.user._id;
+  Tweet.create({ content: tweet, author: userId })
     .then(newTweet => {
       const tweetId = newTweet._id;
-      const userId = req.session.user._id;
       User.findByIdAndUpdate(
         userId,
         { $push: { tweets: tweetId } },
