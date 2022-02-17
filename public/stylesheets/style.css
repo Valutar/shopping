@@ -21,6 +21,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #15202b;
+  color: #ffffff;
 }
 
 .homepage {
@@ -187,8 +188,7 @@ body {
   margin-bottom: 30px;
 }
 
-
-.tweet-btn{
+.tweet-btn {
   color: rgb(149, 147, 147);
   display: inline-block;
   text-align: center;
@@ -199,7 +199,7 @@ body {
   border-radius: 50px;
 }
 
-.delete-btn{
+.delete-btn {
   color: rgb(149, 147, 147);
   display: inline-block;
   text-align: center;
@@ -215,7 +215,7 @@ body {
   color: white;
 }
 
-.edit-btn{
+.edit-btn {
   color: rgb(149, 147, 147);
   display: inline-block;
   text-align: center;
@@ -231,7 +231,7 @@ body {
   color: white;
 }
 
-.logout-btn{
+.logout-btn {
   color: rgb(149, 147, 147);
   display: inline-block;
   text-align: center;
@@ -242,7 +242,7 @@ body {
   border-radius: 50px;
 }
 
-.logout-btn:hover{
+.logout-btn:hover {
   background-color: #444644;
   transition: 0.15s ease-in-out;
   color: white;
