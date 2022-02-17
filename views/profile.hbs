@@ -1,3 +1,4 @@
+<div>
 <h1>This is the Profile Page</h1>
 <h3>Hi {{user.username}}</h3>
 <br />
@@ -5,8 +6,16 @@
 <form action='/profile/tweet/new' method='POST'>
   <label for='tweet'>What you'd like to share:</label>
   <br />
-  <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
-  <button type='submit'>Post!</button>
+  <textarea 
+    class="textarea"
+    name='tweet' 
+    id='tweet' 
+    cols='30' 
+    rows='10'
+    placeholder="What´s happening?"
+  ></textarea>
+  <br>
+  <button type='submit'>Tweet</button>
 </form>
 <br />
 <div>
@@ -17,12 +26,19 @@
       {{! Checks if tweet was edited and returns latest timestamp }}
       <small>{{normalDate createdAt updatedAt}}</small>
       <br />
-      <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
+      <button>
+        <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
         tweet</a>
-      <br />
-      <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+      </button>  
+        <br />
+      <button>
+        <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+      </button>
     </p>
     <br />
   {{/each}}
 </div>
-<a href='/logout'>Log out</a>
+  <button>
+    <a href='/logout'>Log out</a>
+  </button>
+</div>
