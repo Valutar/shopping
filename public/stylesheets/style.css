@@ -154,7 +154,8 @@ body {
 }
 
 .signup-bottom:hover,
-.lgn-btn:hover {
+.lgn-btn:hover,
+.tweet-btn:hover {
   background-color: #00acee;
   transition: 0.15s ease-in-out;
   color: white;
@@ -169,4 +170,64 @@ body {
   text-decoration: none;
   background-color: rgb(239 239 239);
   border-radius: 50px;
+}
+
+.tweet-btn{
+  color: rgb(149, 147, 147);
+  display: inline-block;
+  text-align: center;
+  width: 8%;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(211, 206, 206);
+  border-radius: 50px;
+}
+
+.delete-btn{
+  color: rgb(149, 147, 147);
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(211, 206, 206);
+  border-radius: 50px;
+}
+.delete-btn:hover {
+  background-color: #da6565;
+  transition: 0.15s ease-in-out;
+  color: white;
+}
+
+.edit-btn{
+  color: rgb(149, 147, 147);
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(211, 206, 206);
+  border-radius: 50px;
+}
+.edit-btn:hover {
+  background-color: #31c223;
+  transition: 0.15s ease-in-out;
+  color: white;
+}
+
+.logout-btn{
+  color: rgb(149, 147, 147);
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(211, 206, 206);
+  border-radius: 50px;
+}
+
+.logout-btn:hover{
+  background-color: #444644;
+  transition: 0.15s ease-in-out;
+  color: white;
 }

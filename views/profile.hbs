@@ -1,28 +1,30 @@
 <h1>This is the Profile Page</h1>
-<h3>Hi {{user.username}}</h3>
-<br />
-<h3>Add a tweet:</h3>
-<form action='/profile/tweet/new' method='POST'>
-  <label for='tweet'>What you'd like to share:</label>
+<h3 style="color:white">Welcome {{user.username}}</h3>
   <br />
-  <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
-  <button type='submit'>Post!</button>
+<h3 style="color:white">Add a tweet:</h3>
+  <form action='/profile/tweet/new' method='POST'>
+    <label style="color:white" for='tweet'>What you'd like to share:</label>
+  <br />
+    <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
+    <br>
+    <button class="tweet-btn" type='submit'>Tweet</button>
 </form>
 <br />
 <div>
   {{! The user's tweets are displayed here }}
   {{#each tweets}}
-    <p>{{content}}
+    <p style="color:white">{{content}}
       <br />
       {{! Checks if tweet was edited and returns latest timestamp }}
-      <small>{{normalDate createdAt updatedAt}}</small>
+      <small style="color:white">{{normalDate createdAt updatedAt}}</small>
       <br />
-      <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
-        tweet</a>
+      <a class="delete-btn" href='/profile/tweet/del/{{_id}}' data-method='delete' >Delete this tweet</a>
       <br />
-      <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+      <a class="edit-btn" href='/profile/tweet/edit/{{_id}}'>Edit this tweet</a>
     </p>
     <br />
   {{/each}}
 </div>
-<a href='/logout'>Log out</a>
+<a class="logout-btn" href='/logout'>Log out</a>
+<br>  
+
