@@ -32,12 +32,28 @@ hbs.registerHelper('normalDate', function (createdAt, updatedAt) {
   }
 });
 
-// default value for title local
-const projectName = 'lab-express-basic-auth';
-const capitalized = string =>
-  string[0].toUpperCase() + string.slice(1).toLowerCase();
+// Custom helper; receives two params and checks if equal, shows element if false
+hbs.registerHelper('unlessTwoParams', function (a, b, opts) {
+  if (a == b) {
+    return opts.inverse(this);
+  } else {
+    return opts.fn(this);
+  }
+});
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+// Custom helper; receives two params and checks if equal, shows element if true
+hbs.registerHelper('ifTwoParams', function (a, b, opts) {
+  if (a == b) {
+    return opts.fn(this);
+  } else {
+    return opts.inverse(this);
+  }
+});
+
+// default value for title local
+const projectName = 'Twitclone';
+
+app.locals.title = `${projectName}`;
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
@@ -63,6 +79,9 @@ app.use('/', auth);
 
 const profile = require('./routes/profile');
 app.use('/profile', profile);
+
+const explore = require('./routes/explore');
+app.use('/explore', explore);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

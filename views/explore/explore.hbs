@@ -1,0 +1,19 @@
+<h1>Explore tweets</h1>
+{{currentUser}}
+{{#each tweets}}
+  <div>
+    <h4>Posted by: {{author.username}}</h4>
+    <p>{{content}}
+      <br />
+      {{! Checks if tweet was edited and returns latest timestamp }}
+      <small>{{normalDate createdAt updatedAt}}</small>
+      <br />
+      {{!-- Checks if the current user id !== tweet author id
+      if true -> displays retweet link  --}}
+      {{#unlessTwoParams ../currentUser author._id}}
+        <a href='/explore/retweet/{{_id}}'>🔁 Retweet this tweet</a>
+      {{/unlessTwoParams}}
+    </p>
+    <br />
+  </div>
+{{/each}}

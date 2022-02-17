@@ -16,12 +16,20 @@ function loginCheck() {
 router.get('/', loginCheck(), (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
-    .populate('tweets')
+    .populate({
+      path: 'tweets',
+      populate: {
+        path: 'author',
+        model: 'User',
+      },
+    })
     .then(retrievedUser => {
+      Tweet.find();
       res.render('profile', {
         user: user,
         title: `${user.username}'s profile`,
         tweets: retrievedUser.tweets,
+        currentUser: user._id,
       });
     })
     .catch(err => next(err));
@@ -38,10 +46,7 @@ router.post('/tweet/new', (req, res, next) => {
         userId,
         { $push: { tweets: tweetId } },
         { new: true }
-      ).then(updatedUser => {
-        console.log(updatedUser.tweets);
-        res.redirect('/profile');
-      });
+      ).then(() => res.redirect('/profile'));
     })
     .catch(err => next(err));
 });
@@ -57,6 +62,15 @@ router.get('/tweet/del/:id', async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+});
+
+// Remove retweet from your profile
+router.get('/tweet/remove-retweet/:id', (req, res, next) => {
+  const id = req.params.id;
+  const userId = req.session.user._id;
+  User.findByIdAndUpdate(userId, { $pull: { tweets: id } })
+    .then(() => res.redirect('/profile'))
+    .catch(err => next(err));
 });
 
 router.get('/tweet/edit/:id', (req, res, next) => {

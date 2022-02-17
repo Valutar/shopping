@@ -2,30 +2,44 @@
 <h1>This is the Profile Page</h1>
 <h3 style="color:white">Welcome {{user.username}}</h3>
   <br />
+  <a href='/explore'>Explore other tweets</a>
+<br />
 <h3 style="color:white">Add a tweet:</h3>
   <form action='/profile/tweet/new' method='POST'>
     <label style="color:white" for='tweet'>What you'd like to share:</label>
   <br />
-    <textarea name='tweet' id='tweet' cols='30' rows='10'></textarea>
+    <textarea
+    name='tweet'
+    id='tweet'
+    cols='30'
+    rows='10'
+    maxlength='280'
+    required
+    autofocus
+  ></textarea>
     <br>
     <button class="tweet-btn" type='submit'>Tweet</button>
 </form>
 <br />
-<div>
-  {{! The user's tweets are displayed here }}
-  {{#each tweets}}
+{{#each tweets}}
+  <div>
+    <h4 style="color:white">Posted by: {{author.username}}</h4>
     <p style="color:white">{{content}}
       <br />
       {{! Checks if tweet was edited and returns latest timestamp }}
       <small style="color:white">{{normalDate createdAt updatedAt}}</small>
-      <br />
-      <a class="delete-btn" href='/profile/tweet/del/{{_id}}' data-method='delete' >Delete this tweet</a>
-      <br />
-      <a class="edit-btn" href='/profile/tweet/edit/{{_id}}'>Edit this tweet</a>
+      {{#ifTwoParams author._id ../currentUser}}
+        <br />
+        <a class="delete-btn" href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
+          tweet</a>
+        <br />
+        <a class="edit-btn" href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+        {{else}}
+        <br>
+        <a  class="delete-btn"  href="/profile/tweet/remove-retweet/{{_id}}">❌🔁 Remove retweet</a>
+      {{/ifTwoParams}}
     </p>
     <br />
-  {{/each}}
-</div>
-<a class="logout-btn" href='/logout'>Log out</a>
-<br>  
-
+  </div>
+{{/each}}
+<a href='/logout'>Log out</a>

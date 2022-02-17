@@ -12,13 +12,20 @@
 - ✅ ~~Format a timestamp displayed under the tweet~~
 - ✅ ~~Add ability to edit tweets~~
 - ✅ ~~Show time of edit if the tweet was edited~~
-- Add ability to repost a tweet
+- ✅ ~~Display "posted by" over every tweet on your profile page~~
+- ✅ ~~Add ability to repost a tweet~~
   - ✅ ~~Change tweet model: add reference to author~~
-  - Add "Explore" page to view all tweets (added by other authors)
-  - Add "Retweet" button
-  - Display retweets on your profile
-- Edit .hbs files to autofocus corresponding inputs on page load
-- Edit .hbs files' buttons to react on "hotkeys"
+  - ✅ ~~Add "Explore" page to view all tweets (added by other authors)~~
+  - ✅ ~~Add "Retweet" button that adds the tweet (posted by other user), to your profile~~
+    - ✅ ~~You can't retweet your own tweet~~
+  - ✅ ~~You can't edit retweeted tweets not posted by you.~~
+  - ✅ ~~Add remove retweet link~~
+  - ✅ ~~Display retweets on your profile~~
+- ✅ ~~Edit .hbs files to autofocus corresponding inputs on page load~~
+- Edit "views" folder structure
+- Add a favicon
+- Add avatar to user model and profile
+- Add nav on all pages except index, login & signup
 - .
 - .
 - .
