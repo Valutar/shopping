@@ -1,24 +1,33 @@
-<h1>Log in page</h1>
+<div class="login-form">
+<h1>Login </h1>
 <form action='/login' method='POST'>
-  <label for='username'>Username: </label>
+  <label for='username'> </label>
   <input
+    class="input-box"
     type='text'
     name='username'
-    placeholder='Your cool username'
+    placeholder='Username'
     pattern='^(?=.{3,14}$)(?![_.-])(?!.*[_.-]{2})[a-zA-Z0-9_-]+([^._-])$'
     required
   />
-  <label for='password'>Password: </label>
+  <label for='password'> </label>
   <input
+    class="input-box"
     type='password'
     name='password'
-    placeholder='Enter your password'
+    placeholder='Password'
     pattern='^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$'
     required
   />
-  <button type='submit'>Log in</button>
+  <div>
+    <button type='submit' class="signup-bottom">Login</button>
+  </div>
   <br>
-  <a href="/signup">Or sign up</a>
+  <hr>
+    <p class="or">OR</p>
+  <button class="signup-bottom">
+    <a class="signup-bottom" href="/signup">Sign up</a>
+  </button>
   {{#if message}}
     <p>{{message}}</p>
   {{/if}}
