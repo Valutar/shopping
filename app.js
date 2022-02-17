@@ -32,12 +32,19 @@ hbs.registerHelper('normalDate', function (createdAt, updatedAt) {
   }
 });
 
-// default value for title local
-const projectName = 'lab-express-basic-auth';
-const capitalized = string =>
-  string[0].toUpperCase() + string.slice(1).toLowerCase();
+// Custom helper; receives two params and checks if equal, shows element if true
+hbs.registerHelper('unlessTwoParams', function (a, b, opts) {
+  if (a == b) {
+    return opts.inverse(this);
+  } else {
+    return opts.fn(this);
+  }
+});
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+// default value for title local
+const projectName = 'Twitclone';
+
+app.locals.title = `${projectName}`;
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
