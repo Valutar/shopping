@@ -64,6 +64,9 @@ app.use('/', auth);
 const profile = require('./routes/profile');
 app.use('/profile', profile);
 
+const explore = require('./routes/explore');
+app.use('/explore', explore);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
 

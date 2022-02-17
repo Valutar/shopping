@@ -8,7 +8,7 @@ const tweetSchema = new Schema(
       minLength: 1,
       maxLength: 280,
     },
-    author: { type: Schema.Types.ObjectId, ref: 'author', required: true },
+    author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   },
   { timestamps: true }
 );

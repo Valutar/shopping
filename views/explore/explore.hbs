@@ -1,0 +1,17 @@
+<h1>Discover tweets</h1>
+{{#each tweets}}
+  <div>
+    <h4>Posted by: {{author.username}}</h4>
+    <p>{{content}}
+      <br />
+      {{! Checks if tweet was edited and returns latest timestamp }}
+      <small>{{normalDate createdAt updatedAt}}</small>
+      <br />
+      <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
+        tweet</a>
+      <br />
+      <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+    </p>
+    <br />
+  </div>
+{{/each}}

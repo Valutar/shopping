@@ -19,6 +19,8 @@
   - Display retweets on your profile
 - Edit .hbs files to autofocus corresponding inputs on page load
 - Edit .hbs files' buttons to react on "hotkeys"
+- Edit "views" folder structure
+- Add a favicon
 - .
 - .
 - .
