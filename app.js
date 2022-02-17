@@ -32,12 +32,21 @@ hbs.registerHelper('normalDate', function (createdAt, updatedAt) {
   }
 });
 
-// Custom helper; receives two params and checks if equal, shows element if true
+// Custom helper; receives two params and checks if equal, shows element if false
 hbs.registerHelper('unlessTwoParams', function (a, b, opts) {
   if (a == b) {
     return opts.inverse(this);
   } else {
     return opts.fn(this);
+  }
+});
+
+// Custom helper; receives two params and checks if equal, shows element if true
+hbs.registerHelper('ifTwoParams', function (a, b, opts) {
+  if (a == b) {
+    return opts.fn(this);
+  } else {
+    return opts.inverse(this);
   }
 });
 

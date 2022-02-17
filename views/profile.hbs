@@ -27,11 +27,16 @@
       <br />
       {{! Checks if tweet was edited and returns latest timestamp }}
       <small>{{normalDate createdAt updatedAt}}</small>
-      <br />
-      <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
-        tweet</a>
-      <br />
-      <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+      {{#ifTwoParams author._id ../currentUser}}
+        <br />
+        <a href='/profile/tweet/del/{{_id}}' data-method='delete'>❌ Delete this
+          tweet</a>
+        <br />
+        <a href='/profile/tweet/edit/{{_id}}'>✏ Edit this tweet</a>
+        {{else}}
+        <br>
+        <a href="/profile/tweet/remove-retweet/{{_id}}">❌🔁 Remove retweet</a>
+      {{/ifTwoParams}}
     </p>
     <br />
   </div>
