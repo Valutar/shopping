@@ -19,11 +19,17 @@ const app = express();
 require('./config')(app);
 
 // HBS helper func
-hbs.registerHelper('normalDate', function (dateObj) {
-  const normalDate = `${dateObj.getHours()}:${dateObj.getMinutes()} ${dateObj.getDate()}/${
-    dateObj.getMonth() + 1
-  }/${dateObj.getFullYear()}`;
-  return normalDate;
+// Checks if tweet was edited and returns latest timestamp
+hbs.registerHelper('normalDate', function (createdAt, updatedAt) {
+  if (updatedAt.getTime() > createdAt.getTime()) {
+    return `Edited on: ${updatedAt.getHours()}:${updatedAt.getMinutes()} ${updatedAt.getDate()}/${
+      updatedAt.getMonth() + 1
+    }/${updatedAt.getFullYear()}`;
+  } else {
+    return `Posted on: ${createdAt.getHours()}:${createdAt.getMinutes()} ${createdAt.getDate()}/${
+      createdAt.getMonth() + 1
+    }/${createdAt.getFullYear()}`;
+  }
 });
 
 // default value for title local
