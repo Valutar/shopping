@@ -11,7 +11,8 @@
 - ✅ ~~Fix: Login button not working on signup page~~
 - ✅ ~~Format a timestamp displayed under the tweet~~
 - ✅ ~~Add ability to edit tweets~~
-- Show time of edit if the tweet was edited
+- ✅ ~~Show time of edit if the tweet was edited~~
+- Add ability to repost a tweet
 - .
 - .
 - .
